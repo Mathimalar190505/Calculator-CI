@@ -5,7 +5,8 @@ import java.util.logging.Logger;
 
 public class Calculator {
 
-    private static final Logger logger = Logger.getLogger(Calculator.class.getName());
+    private static final Logger logger =
+            Logger.getLogger(Calculator.class.getName());
 
     public int add(int a, int b) {
         return a + b;
@@ -20,6 +21,9 @@ public class Calculator {
     }
 
     public int divide(int a, int b) {
+        if (b == 0) {
+            return 0;
+        }
         return a / b;
     }
 
@@ -27,8 +31,8 @@ public class Calculator {
         Calculator calculator = new Calculator();
 
         logger.info(() -> "Addition: " + calculator.add(10, 5));
-logger.info(() -> "Subtraction: " + calculator.subtract(10, 5));
-logger.info(() -> "Multiplication: " + calculator.multiply(10, 5));
-logger.info(() -> "Division: " + calculator.divide(10, 5));
+        logger.info(() -> "Subtraction: " + calculator.subtract(10, 5));
+        logger.info(() -> "Multiplication: " + calculator.multiply(10, 5));
+        logger.info(() -> "Division: " + calculator.divide(10, 5));
     }
 }

@@ -10,12 +10,14 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <properties>
-        <maven.compiler.release>17</maven.compiler.release>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <failOnMissingWebXml>false</failOnMissingWebXml>
-        <sonar.projectKey>calculator</sonar.projectKey>
-    </properties>
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+
+    <sonar.projectKey>calculator</sonar.projectKey>
+    <sonar.host.url>http://localhost:9000</sonar.host.url>
+</properties>
 
     <dependencies>
         <dependency>
@@ -63,19 +65,19 @@
                         </goals>
                     </execution>
                     <execution>
-                        <id>report</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
+    <id>report</id>
+    <phase>test</phase>
+    <goals>
+        <goal>report</goal>
+    </goals>
+</execution>
                 </executions>
             </plugin>
 
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>5.0.0.4389</version>
+                <version>5.5.0.6356</version>
             </plugin>
         </plugins>
     </build>
